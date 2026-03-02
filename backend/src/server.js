@@ -14,4 +14,5 @@ app.use("/api/messages", messageRoutes);
 
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
+  
 });
