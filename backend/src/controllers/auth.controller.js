@@ -99,7 +99,6 @@ export const logout = async (_, res) => {
   res.status(200).json({ message: "Logged out succesfully" });
 };
 
-
 export const updateProfile = async (req, res) => {
   const { email } = req.body;
 
