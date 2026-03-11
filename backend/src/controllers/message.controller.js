@@ -14,7 +14,21 @@ export const getAllContacts = async (req, res) => {
   }
 };
 
+export const getMessagesByUserId = async (req, res) => {
+  try {
+    const myId = req.user._id;
+    const { id: userToChatId } = req.params;
 
-export const getMessagesByUserId = async (req,res) =>{
+    const message = await Message.find({
+      $or: [
+        { senderId: myId, recieverId: userToChatId },
+        { senderId: userToChatId, recieverId: myId },
+      ],
+    });
 
+    res.status(200).json(messages);
+  } catch (err) {
+    console.log("Error in getMessages controller: ",err);
+  }
 };
+
