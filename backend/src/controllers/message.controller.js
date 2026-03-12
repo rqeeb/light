@@ -1,3 +1,4 @@
+import cloudinary from "../lib/cloudinary.js";
 import Message from "../models/Message.js";
 import User from "../models/User.js";
 
@@ -28,7 +29,36 @@ export const getMessagesByUserId = async (req, res) => {
 
     res.status(200).json(messages);
   } catch (err) {
-    console.log("Error in getMessages controller: ",err);
+    console.log("Error in getMessages controller: ", err);
   }
 };
 
+export const sendMessage = async (req, res) => {
+  try {
+    const { text, image } = req.body;
+    const {id: recieverId} = req.params;
+    const senderId = req.user._id;
+
+    //uploading to cloudinary
+    let imageUrl;
+    if(image){
+      const uploadResponse = await cloudinary.uploader.upload(image);
+      imageUrl = uploadResponse.secure_url;
+    }
+
+    const newMessage = ({
+      senderId,
+      recieverId,
+      text,
+      image: imageUrl,
+    });
+
+    //todo: sent message
+
+    await newMessage.save();
+    res.status(201).json(newMessage);
+
+  } catch (err) {
+
+  }
+};
