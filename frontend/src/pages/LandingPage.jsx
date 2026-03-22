@@ -8,7 +8,10 @@ const LandingPage = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f14_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f14_1px,transparent_1px)] bg-[size:14px_24px]" />
 
       <div className="relative z-10 w-full flex items-center justify-center min-h-screen px-6">
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-10 py-12 text-center max-w-2xl w-full">
+        <div className="absolute top-[-120px] left-1/2 -translate-x-1/2 h-[420px] w-[420px] rounded-full bg-[#d65a38]/30 blur-[140px]" />
+
+        <div className="absolute top-[-60px] left-1/2 -translate-x-1/2 h-[220px] w-[220px] rounded-full bg-[#ef8b63]/40 blur-[60px]" />
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-10 py-12 text-center max-w-2xl w-full ">
           <p className="text-sm tracking-[0.3em] text-[#7a6d62] mb-4">
             WELCOME TO
           </p>
