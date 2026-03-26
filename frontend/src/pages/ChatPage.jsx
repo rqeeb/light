@@ -1,9 +1,10 @@
 import React from "react";
 import { useChatStore } from "../store/useAuthStore";
-import BorderAnimatedContainer from "../components/borderAnimatedContainer";
+import BorderAnimatedContainer from "../components/BorderAnimatedContainer";
 
 const ChatPage = () => {
-  const { logout } = useAuthStore();
+  const {activeTab} = useChatStore
+  
   return (
     <div className="relative w-full max-w-6xl h-[800px]">
       <BorderAnimatedContainer>
