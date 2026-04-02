@@ -82,7 +82,7 @@ export const useChatStore = create((set, get) => ({
       set({ messages: messages.concat(res.data) });
     } catch (error) {
       set({messages: messages});
-      toast.error(error.response?.data?.message || "something went wrong");
+      toast.error(error.response?.data?.message || "error sending message");
     }
   },
 }));

@@ -72,7 +72,8 @@ function ChatContainer() {
               </div>
             ))}
 
-            <div ref={messageEndRef} />
+            <div ref={} />
+
           </div>
         ) : isMessagesLoading ? (
           <MessagesLoadingSkeleton />
