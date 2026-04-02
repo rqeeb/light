@@ -72,7 +72,7 @@ function ChatContainer() {
               </div>
             ))}
 
-            <div ref={} />
+            <div ref={messageEndRef} />
 
           </div>
         ) : isMessagesLoading ? (
