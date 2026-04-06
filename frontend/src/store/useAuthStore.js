@@ -82,9 +82,14 @@ export const useAuthStore = create((set, get) => ({
   connectSocket: () => {
     const { authUser } = get();
     if (!authUser || get().socket?.connected) return;
+    
+    const token = localStorage.getItem("token");
 
     const socket = io("https://zonnect.onrender.com", {
       withCredentials: true,
+      auth: {
+      token: localStorage.getItem("token"), 
+      },
       query: {
         userId: authUser._id,
       },
