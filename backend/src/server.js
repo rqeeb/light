@@ -13,9 +13,9 @@ const PORT = ENV.PORT || 3000;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", ENV.CLIENT_URL],
+    origin: "https://zonnect.vercel.app",
     credentials: true,
-  }),
+  })
 );
 app.use(cookieParser());
 app.use(express.json({limit: "5mb"}));
